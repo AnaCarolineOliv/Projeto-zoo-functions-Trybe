@@ -14,6 +14,6 @@ const getSpeciesByIds = (...ids) => {
   //   return population.id === ids;
   // });
 };
-console.log(getSpeciesByIds('e8481c1d-42ea-4610-8e11-1752cfc05a46'));
+// console.log(getSpeciesByIds('e8481c1d-42ea-4610-8e11-1752cfc05a46'));
 // console.log(getSpeciesByIds());
 module.exports = getSpeciesByIds;
