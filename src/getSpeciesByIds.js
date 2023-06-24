@@ -9,11 +9,13 @@ const getSpeciesByIds = (...ids) => {
   const species = data.species.filter((specie) => ids.some((id) => id === specie.id));
 
   return species;
-  // return species.map((population) => {
-  //   console.log(population.id);
-  //   return population.id === ids;
-  // });
 };
+// Entendo como funciona:
+// return species.map((population) => {
+//   console.log(population.id);
+//   return population.id === ids;
+// });
+
 // console.log(getSpeciesByIds('e8481c1d-42ea-4610-8e11-1752cfc05a46'));
 // console.log(getSpeciesByIds());
 module.exports = getSpeciesByIds;
