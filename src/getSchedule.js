@@ -58,7 +58,7 @@ const getSchedule = (scheduleTarget) => {
 
 // console.log(getSchedule());
 // console.log(getSchedule('Thursday'));
-console.log(getSchedule('lions'));
+// console.log(getSchedule('lions'));
 // console.log(isAnimal('lions'));
 
 module.exports = getSchedule;
