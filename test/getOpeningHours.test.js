@@ -14,6 +14,26 @@ describe('Testes da função getOpeningHours', () => {
       Sunday: { open: 8, close: 8 },
       Monday: { open: 0, close: 0 },
     });
-    // expect(getOpeningHours(7)).toEqual('Parâmetro inválido, é necessário uma string');
+  });
+  test('A função retorna o esperado', () => {
+    const zooClosed = 'The zoo is closed';
+    expect(getOpeningHours('Tuesday', '11:27-AM')).toEqual('The zoo is open');
+    expect(getOpeningHours('Tuesday', '1:27-AM')).toEqual(zooClosed);
+    expect(getOpeningHours('monday', '1:27-AM')).toEqual(zooClosed);
+    expect(getOpeningHours('monday', '12:00-AM')).toEqual(zooClosed);
+  });
+  test('lança erro no caso de semana seja iválida', () => {
+    expect(() => {
+      getOpeningHours('segunda');
+    }).toThrow('The day must be valid. Example: Monday');
+    expect(() => {
+      getOpeningHours('Wednesday', '13:00');
+    }).toThrow('The abbreviation must be \'AM\' or \'PM\'');
+    expect(() => {
+      getOpeningHours('Wednesday', '13:00-PM');
+    }).toThrow('The hour must be between 0 and 12');
+    expect(() => {
+      getOpeningHours('Wednesday', '11:70-PM');
+    }).toThrow('The minutes must be between 0 and 59');
   });
 });
